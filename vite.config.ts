@@ -34,21 +34,7 @@ export default defineConfig({
   base: '/proto_kaiousaiWebApp/',
   build: {
     outDir: 'dist',
-    sourcemap: false,
-    minify: 'esbuild',
-    cssMinify: true,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'leaflet-vendor': ['leaflet', 'react-leaflet']
-        },
-        assetFileNames: 'assets/[name]-[hash][extname]',
-        chunkFileNames: 'assets/[name]-[hash].js',
-        entryFileNames: 'assets/[name]-[hash].js'
-      }
-    },
-    chunkSizeWarningLimit: 1000
+    sourcemap: false
   }
 })
 
