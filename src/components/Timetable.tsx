@@ -30,15 +30,6 @@ function Timetable() {
     return () => clearInterval(interval)
   }, [])
 
-  // 時間を比較する関数
-  const compareTime = (time1: string, time2: string): number => {
-    const [h1, m1] = time1.split(':').map(Number)
-    const [h2, m2] = time2.split(':').map(Number)
-    const total1 = h1 * 60 + m1
-    const total2 = h2 * 60 + m2
-    return total1 - total2
-  }
-
   // イベントが開催中かどうかを判定（isNowフラグまたは現在時刻との比較）
   const isEventNow = (event: Event): boolean => {
     if (event.isNow) return true // ハードコードされた「開催中」フラグ
