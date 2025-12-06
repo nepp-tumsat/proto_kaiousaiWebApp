@@ -32,6 +32,12 @@ export default defineConfig({
     })
   ],
   base: '/proto_kaiousaiWebApp/',
+  // 開発時のみ: スマホからアクセスする場合は host: true を有効化
+  // 注意: 同じWi-Fiネットワーク内の全デバイスからアクセス可能になります
+  server: {
+    host: true, // 外部からアクセス可能にする（開発時のみ）
+    port: 5173
+  },
   build: {
     outDir: 'dist',
     sourcemap: false
