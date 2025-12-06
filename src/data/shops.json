@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "海王焼きそば",
+    "description": "伝統の味！海鮮たっぷり塩焼きそば。",
+    "location": [35.661234, 139.791234],
+    "image": "/images/yakisoba.jpg"
+  },
+  {
+    "id": 2,
+    "name": "NePP プログラミング体験",
+    "description": "君もエンジニアになろう！部員募集中。",
+    "location": [35.662345, 139.792345],
+    "image": "/images/nepp_booth.jpg"
+  },
+  {
+    "id": 3,
+    "name": "ステージ企画",
+    "description": "ライブパフォーマンスとダンスショー！",
+    "location": [35.663456, 139.793456],
+    "image": "/images/stage.jpg"
+  }
+]
+

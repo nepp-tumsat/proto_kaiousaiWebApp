@@ -1,0 +1,126 @@
+.shop-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.shop-popup-content {
+  background-color: var(--white);
+  border-radius: 12px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.shop-popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.shop-popup-close:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.shop-popup-image-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.shop-popup-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shop-popup-info {
+  padding: 1.5rem;
+}
+
+.shop-popup-title {
+  font-size: 1.5rem;
+  color: var(--marine-blue);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.shop-popup-description {
+  font-size: 1rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* スマートフォン最適化 */
+@media (max-width: 768px) {
+  .shop-popup-content {
+    max-width: 95%;
+    max-height: 85vh;
+  }
+
+  .shop-popup-image-container {
+    height: 200px;
+  }
+
+  .shop-popup-info {
+    padding: 1.25rem;
+  }
+
+  .shop-popup-title {
+    font-size: 1.25rem;
+  }
+
+  .shop-popup-description {
+    font-size: 0.9375rem;
+  }
+}
+
