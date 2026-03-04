@@ -60,7 +60,7 @@ function CampusSvgOverlay() {
   ]
 
   const baseUrl = (import.meta as any).env?.BASE_URL ?? '/'
-  const imageUrl = `${baseUrl.replace(/\/$/, '')}/images/campus-map.svg`
+  const imageUrl = `${baseUrl.replace(/\/$/, '')}/images/campus-map.png`
 
   return (
     <ImageOverlay
@@ -113,7 +113,7 @@ function Map() {
       <MapContainer
         center={[35.667957411840746, 139.79262060541004]}
         zoom={16}
-        maxZoom={21}
+        maxZoom={19}
         style={{ height: '100%', width: '100%' }}
         closePopupOnClick={false}
       >
@@ -122,7 +122,7 @@ function Map() {
           attribution='&copy; OpenStreetMap'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           maxNativeZoom={19}
-          maxZoom={21}
+          maxZoom={19}
           opacity={0.4}
         />
         <CampusSvgOverlay />
