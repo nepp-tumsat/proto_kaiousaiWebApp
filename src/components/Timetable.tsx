@@ -1,4 +1,4 @@
-import eventsData from '../data/events.json'
+import eventsData from '../data/festival/events.json'
 import './Timetable.css'
 
 interface Event {
