@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "time": "10:00",
+    "title": "開会式",
+    "location": "メインステージ",
+    "description": "海王祭の開会を祝う式典",
+    "isNow": false
+  },
+  {
+    "id": 2,
+    "time": "11:00",
+    "title": "バンドライブ",
+    "location": "メインステージ",
+    "description": "学生バンドによるライブパフォーマンス",
+    "isNow": true
+  },
+  {
+    "id": 3,
+    "time": "12:00",
+    "title": "模擬店オープン",
+    "location": "キャンパス内各所",
+    "description": "各模擬店が営業開始",
+    "isNow": false
+  },
+  {
+    "id": 4,
+    "time": "13:00",
+    "title": "ダンスパフォーマンス",
+    "location": "メインステージ",
+    "description": "ダンスサークルによるパフォーマンス",
+    "isNow": false
+  },
+  {
+    "id": 5,
+    "time": "14:00",
+    "title": "NePP プログラミング体験",
+    "location": "NePPブース",
+    "description": "プログラミング体験コーナー",
+    "isNow": false
+  },
+  {
+    "id": 6,
+    "time": "15:00",
+    "title": "クイズ大会",
+    "location": "講義棟",
+    "description": "参加者全員で楽しむクイズ大会",
+    "isNow": false
+  },
+  {
+    "id": 7,
+    "time": "16:00",
+    "title": "閉会式",
+    "location": "メインステージ",
+    "description": "海王祭の閉会式",
+    "isNow": false
+  }
+]

@@ -6,6 +6,33 @@
   padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
+.map-mode-toggle {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: inline-flex;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.map-mode-button {
+  border: none;
+  background: transparent;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: #555;
+}
+
+.map-mode-button.active {
+  background-color: #003366;
+  color: #fff;
+}
+
 .current-location-button {
   position: absolute;
   bottom: calc(16px + env(safe-area-inset-bottom, 0));
@@ -36,4 +63,43 @@
   color: #333;
   font-size: 0.9rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.category-marker-icon,
+.nepp-marker-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-marker-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.nepp-marker-pulse {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #ffeb3b;
+  box-shadow: 0 0 0 rgba(255, 235, 59, 0.7);
+  animation: nepp-pulse 1.5s infinite;
+}
+
+@keyframes nepp-pulse {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(255, 235, 59, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(255, 235, 59, 0);
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(255, 235, 59, 0);
+  }
 }

@@ -1,17 +1,8 @@
-import eventsData from '../data/festival/events.json'
+import { getEvents, type FestivalEvent } from '../data/loaders'
 import './Timetable.css'
 
-interface Event {
-  id: number
-  time: string
-  title: string
-  location: string
-  description: string
-  isNow: boolean
-}
-
 function Timetable() {
-  const events = eventsData as Event[]
+  const events: FestivalEvent[] = getEvents()
 
   return (
     <div className="timetable-container">

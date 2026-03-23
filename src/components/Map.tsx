@@ -1,25 +1,18 @@
 import { useState, useEffect, useRef } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, ImageOverlay, CircleMarker, useMapEvents } from 'react-leaflet'
 import L from 'leaflet'
-import shopsData from '../data/festival/shops.json'
+import { getShops, type Shop } from '../data/loaders'
 import ShopPopup from './ShopPopup'
 import './Map.css'
 
-// Leafletアイコンの設定
+// Leaflet デフォルトアイコン（バンドラ用パッチ）
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- Leaflet の型定義に _getIconUrl が無い
 delete (L.Icon.Default.prototype as any)._getIconUrl
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
   iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
 })
-
-interface Shop {
-  id: number
-  name: string
-  description: string
-  location: [number, number]
-  image: string
-}
 
 // 現在地ボタン（1回だけ現在地を取得）
 function CurrentLocationButton({
@@ -59,8 +52,7 @@ function CampusSvgOverlay() {
     [35.669875, 139.796872], // 北東
   ]
 
-  const baseUrl = (import.meta as any).env?.BASE_URL ?? '/'
-  const imageUrl = `${baseUrl.replace(/\/$/, '')}/images/campus-map.png`
+  const imageUrl = '/images/campus-map.png'
 
   return (
     <ImageOverlay
@@ -89,10 +81,10 @@ function ZoomIndicator() {
 }
 
 function Map() {
-  const [shops] = useState<Shop[]>(shopsData as Shop[])
+  const [shops] = useState<Shop[]>(() => getShops())
   const [selectedShop, setSelectedShop] = useState<Shop | null>(null)
   const [userLocation, setUserLocation] = useState<[number, number] | null>(null)
-  const markerRefs = useRef<Record<number, L.Marker<any> | null>>({})
+  const markerRefs = useRef<Record<number, L.Marker | null>>({})
 
   // 初期表示時に全てのマーカーの吹き出しを開く
   useEffect(() => {
