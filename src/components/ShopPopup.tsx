@@ -1,12 +1,6 @@
 import './ShopPopup.css'
-
-interface Shop {
-  id: number
-  name: string
-  description: string
-  location: [number, number]
-  image: string
-}
+import type { Shop } from '../data/loaders'
+import { assetUrl } from '../lib/assetUrl'
 
 interface ShopPopupProps {
   shop: Shop
@@ -14,8 +8,7 @@ interface ShopPopupProps {
 }
 
 function ShopPopup({ shop, onClose }: ShopPopupProps) {
-  const baseUrl = (import.meta as any).env?.BASE_URL ?? '/'
-  const imageSrc = `${baseUrl.replace(/\/$/, '')}/images/${shop.image}`
+  const imageSrc = assetUrl(`/images/${shop.image}`)
 
   return (
     <div className="shop-popup-overlay" onClick={onClose}>

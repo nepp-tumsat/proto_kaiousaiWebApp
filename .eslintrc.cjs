@@ -15,5 +15,14 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
+  overrides: [
+    {
+      files: ['app/layout.tsx'],
+      rules: {
+        // Next.js App Router の metadata エクスポートはこのファイルに置く
+        'react-refresh/only-export-components': 'off',
+      },
+    },
+  ],
 }
 
