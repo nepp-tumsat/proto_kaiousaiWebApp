@@ -31,9 +31,32 @@
 
 ## トラブルシューティング
 
+### Actions が動かない／一覧にワークフローが出ない
+
+1. **`.github/workflows/deploy.yml` がリモートに乗っているか**  
+   `main`（またはデフォルトブランチ）にマージ・プッシュされているか確認する。
+
+2. **デフォルトブランチ名**  
+   このワークフローは **`main` と `master` への push** で動く。別名（例: `develop` だけ）にしか push していない場合は動かない。
+
+3. **リポジトリの Actions が有効か**  
+   **Settings → Actions → General** で「Allow all actions」など、Actions が無効になっていないか確認する。
+
+4. **手動実行**  
+   **Actions** タブ → 「Deploy to GitHub Pages」→ **Run workflow** で手動起動できる（`workflow_dispatch` 付き）。
+
+5. **フォーク**  
+   フォーク先では、初回にワークフローの承認が必要な場合がある。
+
 ### エラー: "Failed to create deployment (status: 404)"
 → GitHub Pagesが有効化されていません。上記の手順1を実行してください。
 
 ### デプロイが完了しない
 → Actionsタブでワークフローの実行状況を確認してください。
+
+### ホーム画面に追加したアプリ（PWA）が起動しない／トップのメニューで 404 になる
+
+- **`manifest.json`** の `start_url` は **リポジトリ名を固定しない**よう、`./`（マニフェストからの相対）にしています。古い **`proto_kaiousaiWebApp` 固定**だと、リポジトリ名が違うと起動 URL がずれます。
+- **NePP / About** は [`app/nepp/page.tsx`](app/nepp/page.tsx) と [`app/about/page.tsx`](app/about/page.tsx) を追加済みです（以前はルートがなく 404 になっていました）。
+- **アイコン**は `public/icons/` に配置しています（キャンパスマップから縮小した仮画像。本番前に差し替え可）。
 
