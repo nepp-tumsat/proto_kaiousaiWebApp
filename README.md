@@ -49,7 +49,9 @@ npm run lint
 npm run build
 ```
 
-`prebuild` で `npm run ingest` が走り、`scripts/sources` の JSON を検証して `src/data/generated` を更新してから Next をビルドします。
+`prebuild` で `npm run ingest` が走り、`scripts/sources` の JSON を検証して `src/data/generated` を更新してから Next をビルドします。静的書き出し（`output: 'export'`）の結果は **`out/`** に出力されます。
+
+GitHub Pages 用にサブパス配信する場合は CI で `NEXT_PUBLIC_BASE_PATH` を設定しています。ローカルのみでは未設定でルート `/` として動きます。
 
 ### プレビュー（本番相当）
 

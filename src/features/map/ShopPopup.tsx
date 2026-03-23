@@ -2,6 +2,7 @@
 
 import type { FC } from 'react'
 import type { Shop } from '../../data/loaders'
+import { assetUrl } from '../../lib/assetUrl'
 
 interface ShopPopupProps {
   shop: Shop
@@ -9,7 +10,7 @@ interface ShopPopupProps {
 }
 
 const ShopPopup: FC<ShopPopupProps> = ({ shop, onClose }) => {
-  const imageSrc = `/images/${shop.image}`
+  const imageSrc = assetUrl(`/images/${shop.image}`)
 
   return (
     <div className="shop-popup-overlay" onClick={onClose}>

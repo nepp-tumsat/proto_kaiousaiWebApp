@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { CircleMarker, ImageOverlay, MapContainer, Marker, Popup, TileLayer, useMapEvents } from 'react-leaflet'
 import L from 'leaflet'
 import { getShops, type Shop, type ShopCategory } from '../../data/loaders'
+import { assetUrl } from '../../lib/assetUrl'
 import ShopPopup from './ShopPopup'
 
 // Leaflet デフォルトアイコン（バンドラ用パッチ）
@@ -51,7 +52,7 @@ function CampusSvgOverlay() {
     [35.669875, 139.796872],
   ]
 
-  const imageUrl = '/images/campus-map.png'
+  const imageUrl = assetUrl('/images/campus-map.png')
 
   return (
     <ImageOverlay

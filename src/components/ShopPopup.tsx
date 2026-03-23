@@ -1,5 +1,6 @@
 import './ShopPopup.css'
 import type { Shop } from '../data/loaders'
+import { assetUrl } from '../lib/assetUrl'
 
 interface ShopPopupProps {
   shop: Shop
@@ -7,7 +8,7 @@ interface ShopPopupProps {
 }
 
 function ShopPopup({ shop, onClose }: ShopPopupProps) {
-  const imageSrc = `/images/${shop.image}`
+  const imageSrc = assetUrl(`/images/${shop.image}`)
 
   return (
     <div className="shop-popup-overlay" onClick={onClose}>

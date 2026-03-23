@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, ImageOverlay, CircleMarker, useMapEvents } from 'react-leaflet'
 import L from 'leaflet'
 import { getShops, type Shop } from '../data/loaders'
+import { assetUrl } from '../lib/assetUrl'
 import ShopPopup from './ShopPopup'
 import './Map.css'
 
@@ -52,7 +53,7 @@ function CampusSvgOverlay() {
     [35.669875, 139.796872], // 北東
   ]
 
-  const imageUrl = '/images/campus-map.png'
+  const imageUrl = assetUrl('/images/campus-map.png')
 
   return (
     <ImageOverlay
