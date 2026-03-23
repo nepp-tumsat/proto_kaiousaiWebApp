@@ -4,9 +4,9 @@
 
 次のディレクトリは、見た目・レイアウト・インタラクションの変更に使ってください。
 
-- [`app/`](app/) — ページ（ルーティング）。ロジックは薄く保ち、画面の組み立て中心にします。
+- [`src/app/`](src/app/) — ページ（ルーティング）。ロジックは薄く保ち、画面の組み立て中心にします。
 - [`src/features/`](src/features/) — 機能ごとの UI（マップ、タイムテーブルなど）。
-- [`src/styles/`](src/styles/) および [`src/components/Map.css`](src/components/Map.css) など、スタイルに関するファイル。
+- [`src/styles/`](src/styles/) および各 feature 配下の CSS（例: [`src/features/map/Map.css`](src/features/map/Map.css)）など、スタイルに関するファイル。
 
 **データの使い方**: 店舗・イベントなどの一覧は、**必ず** [`src/data/loaders.ts`](src/data/loaders.ts) が export する関数（例: `getShops()`, `getEvents()`）と型だけを import してください。`src/data/generated/*.json` を feature から直接 import しないでください。
 

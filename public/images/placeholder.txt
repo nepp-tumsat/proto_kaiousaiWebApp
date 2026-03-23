@@ -1,8 +1,5 @@
-このディレクトリに以下の画像ファイルを配置してください：
-- yakisoba.jpg (海王焼きそばの画像)
-- nepp_booth.jpg (NePPブースの画像)
-- stage.jpg (ステージの画像)
-- campus-map.jpg (学内マップ画像)
+public/images/ の配置ルール
 
-デモ用のプレースホルダー画像でも構いません。
-
+- map/ … キャンパスマップなどアプリ共通の地図画像（例: campus-map.png）
+- shops/ … 模擬店・企画の写真。`scripts/sources/shops.json` の `image` は
+  `public/images/` からの相対パスで、`shops/` で始める（例: shops/yakisoba.jpg）

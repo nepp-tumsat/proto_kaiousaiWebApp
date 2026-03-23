@@ -6,23 +6,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  ignorePatterns: ['dist', 'out', '.next', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
-  rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
-  },
-  overrides: [
-    {
-      files: ['app/layout.tsx'],
-      rules: {
-        // Next.js App Router の metadata エクスポートはこのファイルに置く
-        'react-refresh/only-export-components': 'off',
-      },
-    },
-  ],
 }
-

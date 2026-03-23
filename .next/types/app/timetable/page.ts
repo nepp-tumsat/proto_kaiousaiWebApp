@@ -1,8 +1,8 @@
-// File: /Users/rina/kaioufes/kaiousaiApp/app/timetable/page.tsx
-import * as entry from '../../../../app/timetable/page.js'
+// File: /Users/rina/kaioufes/kaiousaiApp/src/app/timetable/page.tsx
+import * as entry from '../../../../src/app/timetable/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
-type TEntry = typeof import('../../../../app/timetable/page.js')
+type TEntry = typeof import('../../../../src/app/timetable/page.js')
 
 // Check that the entry is a valid entry
 checkFields<Diff<{

@@ -3,107 +3,72 @@
 ## プロジェクト構造
 
 ```
-proto_kaiousaiWebApp/
-├── public/                 # 静的ファイル
-│   ├── images/            # 画像ファイル
-│   ├── icons/             # PWAアイコン
-│   └── manifest.json      # PWAマニフェスト
+kaiousaiApp/
+├── public/                 # 静的ファイル（images, icons, manifest.json など）
 ├── src/
-│   ├── components/        # Reactコンポーネント
-│   │   ├── Map.tsx        # インタラクティブマップ
-│   │   ├── Timetable.tsx  # タイムテーブル
-│   │   └── ShopPopup.tsx  # 店舗詳細モーダル
-│   ├── data/              # データファイル
-│   │   ├── shops.json     # 模擬店データ
-│   │   └── events.json    # イベントデータ
-│   ├── styles/            # スタイルファイル
-│   ├── App.tsx            # メインアプリコンポーネント
-│   └── main.tsx           # エントリーポイント
-├── .github/
-│   └── workflows/         # GitHub Actions
-└── docs/                  # ドキュメント
+│   ├── app/                # Next.js App Router（ページ・レイアウト）
+│   ├── features/           # 機能単位の UI（マップ、タイムテーブルなど）
+│   ├── data/               # データ・スキーマ・生成 JSON
+│   ├── lib/                # 共有ユーティリティ
+│   └── styles/             # グローバルスタイル
+├── scripts/                # データ取り込みなど
+├── .github/workflows/      # GitHub Actions
+└── docs/                   # ドキュメント
 ```
 
 ## コンポーネント構成
 
-### App.tsx
-- アプリケーションのルートコンポーネント
-- タブナビゲーション（マップ/タイムテーブル）
-- 状態管理（アクティブタブ）
+### ページ（`src/app/`）
 
-### Map.tsx
-- Leaflet.jsを使用したマップ表示
-- カスタムマップ画像のオーバーレイ
-- マーカーの表示とクリックイベント
-- 現在地ボタン（デモ用）
+- ルートとレイアウト（フッターナビなど）
+- 重いクライアントコンポーネントは `src/features/` を dynamic import する場合あり
 
-### Timetable.tsx
-- イベントリストの表示
-- 「開催中」バッジの表示
-- 時間順のソート
+### 機能 UI（`src/features/`）
 
-### ShopPopup.tsx
-- 店舗詳細情報のモーダル表示
-- 画像と説明文の表示
+- **map** — Leaflet マップ、店舗ポップアップ
+- **timetable** — 企画一覧（タイムテーブル）
 
 ## データフロー
 
 ```
-JSONファイル (shops.json, events.json)
+JSON（src/data/generated/）
     ↓
-Reactコンポーネント (useState)
+loaders（src/data/loaders.ts）
+    ↓
+feature コンポーネント
     ↓
 UI表示
 ```
 
 ## 状態管理
 
-- **ローカル状態**: Reactの`useState`フックを使用
-- **グローバル状態**: なし（プロトタイプのため最小限）
+- **ローカル状態**: Reactの`useState`など
+- **グローバル状態**: 必要最小限（現状は主にローカル）
 
 ## スタイリング戦略
 
-- **コンポーネント単位のCSS**
-  - 各コンポーネントに専用のCSSファイル
-  - スコープ化されたスタイル
-
-- **グローバルスタイル**
-  - `globals.css`で基本リセットと共通スタイル
-
-- **CSS変数**
-  - テーマカラー（マリンブルー）の一元管理
+- **feature 単位のCSS** — 各 feature ディレクトリ内で import
+- **グローバルスタイル** — `globals.css` / `App.css` をルートレイアウトで読み込み
 
 ## ビルドプロセス
 
-1. **TypeScriptコンパイル**
-   - `tsc`で型チェック
-
-2. **Viteビルド**
-   - バンドルと最適化
-   - アセットの処理
-
-3. **PWA生成**
-   - Service Workerの生成
-   - マニフェストの生成
+1. **`npm run prebuild`**（データ取り込み `ingest`）
+2. **`next build`** — 静的エクスポート（`out/`）
 
 ## デプロイフロー
 
 ```
 Git Push
     ↓
-GitHub Actions (自動トリガー)
+GitHub Actions（自動トリガー）
     ↓
-ビルド (npm run build)
+npm run build
     ↓
-アーティファクトのアップロード
-    ↓
-GitHub Pagesへのデプロイ
+out/ を GitHub Pages にデプロイ
 ```
 
 ## パフォーマンス考慮事項
 
-- **コード分割**: Viteによる自動分割
-- **画像最適化**: 遅延読み込み
-- **キャッシュ**: Service Workerによるオフライン対応
-- **バンドルサイズ**: 最小限の依存関係
-
+- **コード分割** — Next.js / dynamic import
+- **画像最適化** — 必要に応じた遅延読み込み
+- **バンドルサイズ** — 依存関係の見直し

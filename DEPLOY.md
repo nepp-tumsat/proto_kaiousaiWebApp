@@ -57,6 +57,6 @@
 ### ホーム画面に追加したアプリ（PWA）が起動しない／トップのメニューで 404 になる
 
 - **`manifest.json`** の `start_url` は **リポジトリ名を固定しない**よう、`./`（マニフェストからの相対）にしています。古い **`proto_kaiousaiWebApp` 固定**だと、リポジトリ名が違うと起動 URL がずれます。
-- **NePP / About** は [`app/nepp/page.tsx`](app/nepp/page.tsx) と [`app/about/page.tsx`](app/about/page.tsx) を追加済みです（以前はルートがなく 404 になっていました）。
+- **NePP / About** は [`src/app/nepp/page.tsx`](src/app/nepp/page.tsx) と [`src/app/about/page.tsx`](src/app/about/page.tsx) を追加済みです（以前はルートがなく 404 になっていました）。
 - **アイコン**は `public/icons/` に配置しています（キャンパスマップから縮小した仮画像。本番前に差し替え可）。
 

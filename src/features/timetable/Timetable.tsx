@@ -1,5 +1,6 @@
 'use client'
 
+import './Timetable.css'
 import { getEvents, type FestivalEvent } from '../../data/loaders'
 
 export default function TimetableFeature() {

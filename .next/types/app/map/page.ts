@@ -1,8 +1,8 @@
-// File: /Users/rina/kaioufes/kaiousaiApp/app/map/page.tsx
-import * as entry from '../../../../app/map/page.js'
+// File: /Users/rina/kaioufes/kaiousaiApp/src/app/map/page.tsx
+import * as entry from '../../../../src/app/map/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
-type TEntry = typeof import('../../../../app/map/page.js')
+type TEntry = typeof import('../../../../src/app/map/page.js')
 
 // Check that the entry is a valid entry
 checkFields<Diff<{

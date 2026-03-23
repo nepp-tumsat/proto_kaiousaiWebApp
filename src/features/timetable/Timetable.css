@@ -1,0 +1,56 @@
+.timetable-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 1rem;
+  background-color: #f5f5f5;
+}
+
+.timetable-container h2 {
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.timetable-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.timetable-item {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  border-left: 4px solid transparent;
+}
+
+.timetable-item.now {
+  border-left-color: #003366;
+  background-color: #f0f7ff;
+}
+
+.timetable-time {
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 0.5rem;
+}
+
+.timetable-content h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.now-badge {
+  background-color: #003366;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+}
+
+.timetable-content p {
+  margin: 0.25rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}

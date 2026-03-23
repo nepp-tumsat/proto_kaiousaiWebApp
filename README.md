@@ -15,7 +15,7 @@
 
 | 領域 | 役割 | 置き場 |
 |------|------|--------|
-| **Presentation** | ページ・機能 UI。初心者は主にここ | [`app/`](app/), [`src/features/`](src/features/) |
+| **Presentation** | ページ・機能 UI。初心者は主にここ | [`src/app/`](src/app/), [`src/features/`](src/features/) |
 | **Data access** | `generated` を読み、**アプリが使うデータ API** | [`src/data/loaders.ts`](src/data/loaders.ts) |
 | **Contract** | JSON の形の定義（単一の真実） | [`src/data/schema/`](src/data/schema/) |
 | **Pipeline** | 外部データの検証・`generated` への書き出し | [`scripts/ingest.ts`](scripts/ingest.ts), [`scripts/sources/`](scripts/sources/) |
@@ -77,8 +77,8 @@ npm run preview
 
 例:
 
-- `public/images/campus-map.png` — 学内マップオーバーレイ
-- `public/images/` — 模擬店画像など（`shops.json` の `image` フィールドと対応）
+- `public/images/map/campus-map.png` — 学内マップオーバーレイ
+- `public/images/shops/` — 模擬店画像（`shops.json` の `image` は `shops/ファイル名` 形式）
 
 ## ライセンス
 

@@ -7,7 +7,7 @@
       35.66751236917332,
       139.79109988158692
     ],
-    "image": "yakisoba.jpg",
+    "image": "shops/yakisoba.jpg",
     "category": "food",
     "isNepp": false
   },
@@ -19,7 +19,7 @@
       35.667000819208205,
       139.79263818382944
     ],
-    "image": "nepp_booth.jpg",
+    "image": "shops/nepp_booth.jpg",
     "category": "experience",
     "isNepp": true
   },
@@ -31,7 +31,7 @@
       35.6674014773522,
       139.79056767696503
     ],
-    "image": "stage.jpg",
+    "image": "shops/stage.jpg",
     "category": "stage",
     "isNepp": false
   }

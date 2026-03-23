@@ -59,13 +59,13 @@
     "name": "海王焼きそば",
     "description": "伝統の味！海鮮たっぷり塩焼きそば。",
     "location": [35.66XXXX, 139.79XXXX], // 緯度経度(画像上の座標)
-    "image": "/images/yakisoba.jpg"
+    "image": "shops/yakisoba.jpg"
   },
   {
     "id": 2,
     "name": "NePP プログラミング体験",
     "description": "君もエンジニアになろう！部員募集中。",
     "location": [35.66XXXX, 139.79XXXX],
-    "image": "/images/nepp_booth.jpg"
+    "image": "shops/nepp_booth.jpg"
   }
 ]
