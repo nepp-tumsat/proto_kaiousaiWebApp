@@ -1,5 +1,6 @@
 'use client'
 
+import './Map.css'
 import { useEffect, useRef, useState } from 'react'
 import { CircleMarker, ImageOverlay, MapContainer, Marker, Popup, TileLayer, useMapEvents } from 'react-leaflet'
 import L from 'leaflet'
@@ -52,7 +53,7 @@ function CampusSvgOverlay() {
     [35.669875, 139.796872],
   ]
 
-  const imageUrl = assetUrl('/images/campus-map.png')
+  const imageUrl = assetUrl('/images/map/campus-map.png')
 
   return (
     <ImageOverlay

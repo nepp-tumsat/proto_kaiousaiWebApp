@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST='{"app/map/page.tsx -> ../../src/features/map/Map":{"id":1111,"files":["static/chunks/d0deef33.bd75b11a952a2d3d.js","static/chunks/19-48ce11c6bd93179b.js","static/chunks/111.a84b706197f4fbda.js"]}}';
+self.__REACT_LOADABLE_MANIFEST='{"app/map/page.tsx -> @/features/map/Map":{"id":1111,"files":["static/css/7ef633a0185e0423.css","static/chunks/d0deef33.bd75b11a952a2d3d.js","static/chunks/19-48ce11c6bd93179b.js","static/chunks/111.1b40203f652e3c0f.js"]}}';

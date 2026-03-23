@@ -1,5 +1,6 @@
 'use client'
 
+import './ShopPopup.css'
 import type { FC } from 'react'
 import type { Shop } from '../../data/loaders'
 import { assetUrl } from '../../lib/assetUrl'
