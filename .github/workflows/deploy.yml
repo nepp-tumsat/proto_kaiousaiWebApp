@@ -18,9 +18,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      # https://<user>.github.io/<repo>/ のサブパスで public アセットを解決する
-      NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+    # 【修正1】以下のenvブロックは不要になるため、削除するかコメントアウトします
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -37,11 +35,15 @@ jobs:
       - name: Build
         run: npm run build
       
+      # 【修正2】ビルド後にCNAMEファイルをoutディレクトリに書き出す
+      - name: Add CNAME
+        run: echo "app.kaioufes.com" > ./out/CNAME
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './out'
-
+  
   deploy:
     environment:
       name: github-pages
